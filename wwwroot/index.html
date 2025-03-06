@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Employee Management System</h1>
+            <ul>
+                <li><a href="#list">Employee List</a></li>
+                <li><a href="#add">Add Employee</a></li>
+                <li><a href="#search">Search Employee</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Form tìm kiếm theo ID -->
+        <section id="search" class="search-container">
+            <h2>Search Employee by ID</h2>
+            <form id="searchForm">
+                <label for="searchId">Employee ID:</label>
+                <input type="number" id="searchId" placeholder="Enter ID" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="searchResult"></div>
+        </section>
+
+        <!-- Form thêm/sửa nhân viên -->
+        <section id="add" class="form-container">
+            <h2 id="formTitle">Add New Employee</h2>
+            <form id="employeeForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email" required>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+                <label for="position">Position:</label>
+                <input type="text" id="position" placeholder="Position" required>
+                <label for="salary">Salary:</label>
+                <input type="number" id="salary" placeholder="Salary" step="0.01" required>
+                <label for="hiredDate">Hired Date:</label>
+                <input type="datetime-local" id="hiredDate" required>
+                <button type="submit" id="submitButton">Add Employee</button>
+            </form>
+            <div id="formMessage"></div>
+        </section>
+
+        <!-- Danh sách nhân viên -->
+        <section id="list" class="list-container">
+            <h2>Employee List</h2>
+            <button id="refreshButton">Refresh</button>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Position</th>
+                        <th>Salary</th>
+                        <th>Hired Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
